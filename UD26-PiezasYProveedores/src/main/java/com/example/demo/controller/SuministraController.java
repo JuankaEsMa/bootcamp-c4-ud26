@@ -37,8 +37,8 @@ public class SuministraController {
 	public Suministra updateProveedor(@RequestBody Suministra suministra, @PathVariable Integer id) {
 		Suministra suministraActualizar = service.getById(id);
 		suministraActualizar.setPrecio(suministra.getPrecio());
-		suministraActualizar.setCodigo_pieza(suministra.getCodigo_pieza());
-		suministraActualizar.setCodigo_proveedor(suministra.getCodigo_proveedor());
+		suministraActualizar.setPieza(suministra.getPieza());
+		suministraActualizar.setProveedor(suministra.getProveedor());
 		return service.saveEntity(suministraActualizar);
 	}
 	@DeleteMapping("/{id}")

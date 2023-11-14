@@ -15,21 +15,14 @@ public class Suministra {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@ManyToOne
-    @JoinColumn(name = "CodigoPieza")
-	private int codigo_pieza;
+    @JoinColumn(name = "codigo_pieza")
+	private Pieza pieza;
 	@ManyToOne
-    @JoinColumn(name = "IdProveedor")
-	private String codigo_proveedor;
+    @JoinColumn(name = "id_proveedor")
+	private Proveedor proveedor;
 	private int precio;
 	public Suministra() {
 		
-	}
-	public Suministra(int id, int codigo_pieza, String codigo_proveedor, int precio) {
-		super();
-		this.id = id;
-		this.codigo_pieza = codigo_pieza;
-		this.codigo_proveedor = codigo_proveedor;
-		this.precio = precio;
 	}
 	public int getId() {
 		return id;
@@ -37,22 +30,23 @@ public class Suministra {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getCodigo_pieza() {
-		return codigo_pieza;
-	}
-	public void setCodigo_pieza(int codigo_pieza) {
-		this.codigo_pieza = codigo_pieza;
-	}
-	public String getCodigo_proveedor() {
-		return codigo_proveedor;
-	}
-	public void setCodigo_proveedor(String codigo_proveedor) {
-		this.codigo_proveedor = codigo_proveedor;
-	}
 	public int getPrecio() {
 		return precio;
 	}
 	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
+	public Pieza getPieza() {
+		return pieza;
+	}
+	public void setPieza(Pieza pieza) {
+		this.pieza = pieza;
+	}
+	public Proveedor getProveedor() {
+		return proveedor;
+	}
+	public void setProveedor(Proveedor proveedor) {
+		this.proveedor = proveedor;
+	}
+	
 }
